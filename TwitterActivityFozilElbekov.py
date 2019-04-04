@@ -2,7 +2,7 @@ import sys
 import tweepy
 import numpy as np
 from textblob import TextBlob
-
+from hi import *
 
 def tweet_analysis(query):
     # get tweets
@@ -45,15 +45,19 @@ def print_result(mean):
         print("NEUTRAL")
     else:
         print("NEGATIVE")
-
+"""
+f = open('tokens.txt','r')
 # get consumer keys from command line
-consumer_key = 'h5bRuq4MlhfmVaj3ZpaIYpsdb'
-consumer_secret = '1EeVa6jvKIFI59fJjrEps8pC2JojMNvrcigsWrZIAnAPOyqzoM'
+consumer_key = f.readline()
+consumer_secret = f.readline()
 
 # get access tokens from command line
-access_token = '800938641619058693-ymhujk8pDIh0eI06KDmEphW31w65O6W'
-access_token_secret = '7NOb3Krlifn3fuxnK9w8a1VOZvjf3hzdRSoR6ozcHaQdu'
+access_token = f.readline()
+access_token_secret = f.readline()
 
+
+f.close()
+"""
 # create auth object for api
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
